@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Signup_Customer";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+
+<h2 class="text-center">Sign up For Customer</h2>
+
+<form method="post">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <label class="control-label no-padding-right" for="Username">Username</label>
+                <input type="text" name="Username" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <label class="control-label no-padding-right" for="Password">Password</label>
+                <input type="password" name="Password" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <label class="control-label no-padding-right" for="Fullname">Fullname</label>
+                <input type="text" name="Fullname" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <label class="control-label no-padding-right" for="Phone">Phone</label>
+                <input type="text" name="Phone" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-5">
+                <input type="submit" class="col-sm-4 col-md-3 btn btn-primary" value="Sign Up">
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-offset-5">
+                <input type="reset" class="col-sm-4 col-md-3 btn btn-danger" value="Reset">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-offset-4">
+            <p>Already have an account? If you have one, click @Html.ActionLink("Here", "Login_Customer", "Customer") to login.</p>
+        </div>
+    </div>
+</form>
+
+@{
+    if (TempData["msg"] != null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }
+}

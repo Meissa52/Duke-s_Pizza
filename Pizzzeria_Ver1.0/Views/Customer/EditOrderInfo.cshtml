@@ -1,0 +1,107 @@
+﻿@using Pizzzeria_Ver1._0.Models;
+@model OrderInfo
+
+@{
+    ViewBag.Title = "EditOrderInfo";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2 class="text-center">Edit your Order Information</h2>
+<hr class="my-4">
+
+<fieldset>
+    @using (Html.BeginForm("EditOrderInfo", "Customer", FormMethod.Post))
+    {
+    <form>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <label>@Html.LabelFor(model => model.OrderMethod)</label>
+                @Html.DropDownListFor(model => model.OrderMethod,
+                    new SelectListItem[] {
+                        new SelectListItem() {Value="PickUp",Text="PickUp"},
+                        new SelectListItem() {Value="Delivery", Text="Delivery"}
+                    },
+                    "Pickup or Delivery",
+                    new { @class = "form-control" }
+                    )
+            </div>
+            <div class="col-md-3">
+                <label>@Html.LabelFor(model => model.Date)</label>
+                <div class="form-control">
+                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @type = "date", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Date)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label>@Html.LabelFor(model => model.Time)</label>
+                @Html.DropDownListFor(model => model.Time,
+                    new SelectListItem[] {
+                        new SelectListItem() {Value="9am-10am",Text="9am-10am"},
+                        new SelectListItem() {Value="10am-11am", Text="10am-11am"},
+                        new SelectListItem() {Value="11am-12pm",Text="11am-12pm"},
+                        new SelectListItem() {Value="12pm-1pm", Text="12pm-1pm"},
+                        new SelectListItem() {Value="1pm-2pm",Text="1pm-2pm"},
+                        new SelectListItem() {Value="2pm-3pm", Text="2pm-3pm"},
+                        new SelectListItem() {Value="3pm-4pm",Text="3pm-4pm"},
+                        new SelectListItem() {Value="4pm-5pm", Text="4pm-5pm"},
+                        new SelectListItem() {Value="5pm-6pm", Text="5pm-6pm"},
+                        new SelectListItem() {Value="6pm-7pm", Text="6pm-7pm"},
+                        new SelectListItem() {Value="7pm-8pm", Text="7pm-8pm"},
+
+                    },
+                    "Select your picking up time",
+                    new { @class = "form-control" }
+                    )
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-10">
+                <label>@Html.LabelFor(model => model.Street)</label>
+                @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Street)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <label>@Html.LabelFor(model => model.City)</label>
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+            <div class="col-md-3">
+                <label>@Html.LabelFor(model => model.State)</label>
+                @Html.DropDownListFor(model => model.State,
+                    new SelectListItem[] {
+                        new SelectListItem() {Value="NY",Text="NY"}
+                    },
+                    "Pickup or Delivery",
+                    new { @class = "form-control" }
+                    )
+            </div>
+            <div class="col-md-4">
+                <label>@Html.LabelFor(model => model.Zip)</label>
+                @Html.EditorFor(model => model.Zip, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Zip)
+            </div>
+        </div>
+        <br />
+        <hr class="my-4">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-offset-4">
+                    <input type="submit" class="col-md-3 btn btn-primary" value="Save" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-4">
+                    <input type="reset" class="col-md-3 btn btn-danger" value="Reset" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    }
+</fieldset>

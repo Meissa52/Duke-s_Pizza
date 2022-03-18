@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Duke's</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+
+<body id="indexbody">
+    <div class="container" id="main-container">
+        <div class="container">
+            <div class="section no-pad-bot" id="index-banner">
+                <br><br>
+                <h1 class="text-center"><font style="color: blue; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: blue"><b>Welcome to Dukes Pizza!!</b></font></h1>
+                <h3 class="text-center">Your a Customer or an Employee?</h3>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div id="custempframe" class="col-md-4">
+                        <h3 class="text-center">Customer</h3>
+                        <hr class="my-4">
+                        <button id="download-button" class="btn btn-secondary btn-lg btn-block">@Html.ActionLink("Sign Up", "Signup_Customer", "Customer")</button>
+                        <button id="download-button" class="btn btn-secondary btn-lg btn-block">@Html.ActionLink("Login", "Login_Customer", "Customer")</button>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div id="custempframe" class="col-md-4">
+                        <h3 class="text-center">Employee</h3>
+                        <hr class="my-4">
+                        <button id="download-button" class="btn btn-secondary btn-lg btn-block">@Html.ActionLink("Login", "Login_Employee", "Employee")</button>
+                    </div>
+                </div>
+                <br><br>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+

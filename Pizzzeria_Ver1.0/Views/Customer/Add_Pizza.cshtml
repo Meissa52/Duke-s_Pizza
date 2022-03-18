@@ -1,0 +1,108 @@
+﻿@using Pizzzeria_Ver1._0.Models;
+@model Pizza
+@using System.ComponentModel;
+
+@{
+    ViewBag.Title = "PizzaSelection";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    int Amt = 1;
+}
+
+<fieldset>
+    <legend>Pizza Selection</legend>
+    @using (Html.BeginForm("Add_Pizza", "Customer", FormMethod.Post))
+    {
+<form>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <label>@Html.LabelFor(model => model.Size)</label>
+            @Html.DropDownListFor(model => model.Size,
+                new SelectListItem[] {
+                    new SelectListItem() {Value="Large",Text="Large $13.45"},
+                    new SelectListItem() {Value="Medium", Text="Medium $10.45"},
+                    new SelectListItem() {Value="Small", Text="Small $7.45"}
+                },
+                "Select the Pizza size",
+                new { @class = "form-control" }
+                )
+        </div>
+    </div>
+    <h4 class="text-center">Topping</h4>
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-7 form-check">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Cheese)</label>
+                    @Html.CheckBoxFor(model => model.Cheese, false)
+                </div>
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Blackolives)</label>
+                    @Html.CheckBoxFor(model => model.Blackolives, false)
+                </div>
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Bacon)</label>
+                    @Html.CheckBoxFor(model => model.Bacon, false)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Greenpeppers)</label>
+                    @Html.CheckBoxFor(model => model.Greenpeppers, false)
+                </div>
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Chicken)</label>
+                    @Html.CheckBoxFor(model => model.Chicken, false)
+                </div>
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Pinapple)</label>
+                    @Html.CheckBoxFor(model => model.Pinapple, false)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Mushroom)</label>
+                    @Html.CheckBoxFor(model => model.Mushroom, false)
+                </div>
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Spinach)</label>
+                    @Html.CheckBoxFor(model => model.Spinach, false)
+                </div>
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Onions)</label>
+                    @Html.CheckBoxFor(model => model.Onions, false)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Shrimp)</label>
+                    @Html.CheckBoxFor(model => model.Shrimp, false)
+                </div>
+                <div class="col-md-4">
+                    <label>@Html.LabelFor(model => model.Sausages)</label>
+                    @Html.CheckBoxFor(model => model.Sausages, false)
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <input type="submit" name ="submit" class="btn btn-secondary btn-lg btn-block" value="Add" />
+            </div>
+            <div class="col-md-3">
+                <input type="submit" name ="submit" class="btn btn-secondary btn-lg btn-block" value="Save" />
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <input type="reset" name ="submit" class="btn btn-secondary btn-lg btn-block" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+    }
+</fieldset>

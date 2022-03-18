@@ -1,0 +1,6 @@
+CREATE PROC GetPizzaInfo
+@OrderID int
+AS
+BEGIN
+SELECT * FROM Pizza WHERE OrderID = @OrderID
+END
